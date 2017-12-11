@@ -1,0 +1,52 @@
+--=========================== SALE CONTROL FILE ===========================
+
+--sqlldr towner/travelxp456 control='C:\Users\Nick\Desktop\471project\adhoctables_loading\sale_adhoc\Sale.clt', log='C:\Users\Nick\Desktop\471project\adhoctables_loading\sale_adhoc\Sale.log'
+
+
+
+
+options(skip=1,direct=true) 
+LOAD DATA
+INFILE 'C:\Users\Nick\Desktop\471project\adhoctables_loading\sale_adhoc\SaleData.csv'
+BADFILE 'C:\Users\Nick\Desktop\471project\adhoctables_loading\sale_adhoc\Sale.bad'
+DISCARDFILE 'C:\Users\Nick\Desktop\471project\adhoctables_loading\sale_adhoc\Sale.dsc'
+TRUNCATE 
+INTO TABLE sale_data
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+TRAILING NULLCOLS    
+	(sale			date "DD/MM/YYYY",  
+         cust_id	        INTEGER EXTERNAL,
+	 itinerary_id		INTEGER EXTERNAL,
+	 itinerary_num		INTEGER EXTERNAL,
+	 emp_num		INTEGER EXTERNAL,
+	 agent			CHAR,
+	 booking_id		INTEGER EXTERNAL,
+	 booking_num		CHAR,
+	 product_category       INTEGER EXTERNAL,
+	 product_supplier_id  	INTEGER EXTERNAL,
+         supplier_office        CHAR,
+	 trip_start		date "DD/MM/YYYY",
+	 trip_end		date "DD/MM/YYYY",
+	 class			CHAR,
+	 num_of_travelers	INTEGER EXTERNAL,
+	 product_id		INTEGER EXTERNAL,
+	 product		CHAR,
+	 description		CHAR,
+	 destination		CHAR,
+	 dest_id		CHAR,
+	 credit_card		CHAR,
+	 expiry_date		date "DD/MM/YYYY",
+	 card_number		CHAR,
+	 billing_date		date "DD/MM/YYYY",
+	 bill_description	CHAR ,
+	 base_price		DECIMAL EXTERNAL,
+	 total_price		DECIMAL EXTERNAL,
+	 billed_amt		DECIMAL EXTERNAL,
+	 agency_fee_code	char,
+	 agency_fee_amount	INTEGER EXTERNAL)
+
+
+
+
+
+

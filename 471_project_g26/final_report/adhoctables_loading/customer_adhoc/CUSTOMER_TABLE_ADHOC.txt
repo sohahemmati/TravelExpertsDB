@@ -1,0 +1,71 @@
+REM ==================================================================
+REM *********** ZOHREH NEJADIAN ****** WORKSHOP 4 *************
+REM ==================================================================
+
+
+
+REM ================== INITIAL FORMAT SETTING ========================
+
+SET PAGESIZE 30
+SET LINESIZE 80
+SET FEEDBACK ON
+SET VERIFY ON
+
+TTITLE '**************** CREATE CUSTOMER_DATA TABLE ********************'
+BTITLE '********************* By Zohreh Nejadian **********************'
+
+COL TABLE_NAME FOR A15
+COL TABLESPACE_NAME FOR A15
+COL OWNER FOR A15
+
+
+REM=========================== SQL COMMAND =============================
+
+CREATE TABLE        customer_data(
+         cust_id      NUMBER(5) PRIMARY KEY,  
+         fname        VARCHAR2(15) NOT NULL,
+         Lname        VARCHAR2(15) NOT NULL,
+         agent        VARCHAR2(3),
+         email        VARCHAR2(30),
+         home_phone   VARCHAR2(15),
+         B_PHONE      VARCHAR2(15),
+         birth_date   DATE,
+         address      VARCHAR2(40),
+	 city         VARCHAR2(10),
+	 postal_code  VARCHAR2(10),
+	 province     VARCHAR2(10),
+	 country      VARCHAR2(10))          
+TABLESPACE ADHOC;
+
+select table_name, tablespace_name, owner from dba_tables
+WHERE TABLESPACE_NAME='ADHOC';
+
+
+SQL> DESC CUSTOMER_DATA
+ Name                                      Null?    Type
+ ----------------------------------------- -------- --------------
+ CUST_ID                                   NOT NULL NUMBER(5)
+ FNAME                                     NOT NULL VARCHAR2(15)
+ LNAME                                     NOT NULL VARCHAR2(15)
+ AGENT                                              VARCHAR2(10)
+ EMAIL                                              VARCHAR2(30)
+ HOME_PHONE                                         NUMBER(12)
+ B_PHONE                                            NUMBER(12)
+ BIRTH_DATE                                         DATE
+ ADDRESS                                            VARCHAR2(40)
+ CITY                                               VARCHAR2(10)
+ POSTAL_CODE                                        VARCHAR2(10)
+ PROVINCE                                           VARCHAR2(10)
+ COUNTRY                                            VARCHAR2(10)
+
+
+REM =================== CLEARING SETTING =============================== 
+
+TTITLE OFF
+BTITLE OFF
+SET linesize 80
+SET Long 80
+SET FEEDBACK OFF
+SET VERIFY OFF
+SET ECHO OFF
+SPOOL OFF

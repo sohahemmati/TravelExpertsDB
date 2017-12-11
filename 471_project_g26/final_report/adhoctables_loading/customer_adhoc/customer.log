@@ -1,0 +1,69 @@
+
+SQL*Loader: Release 11.2.0.2.0 - Production on Fri Dec 2 20:44:27 2016
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   C:\Users\Nick\Desktop\471project\adhoctables_loading\customer_adhoc\customer.ctl
+Data File:      C:\Users\Nick\Desktop\471project\adhoctables_loading\customer_adhoc\customerData.csv
+  Bad File:     C:\Users\Nick\Desktop\471project\adhoctables_loading\customer_adhoc\customer.bad
+  Discard File: C:\Users\Nick\Desktop\471project\adhoctables_loading\customer_adhoc\customer.dsc 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 1
+Errors allowed: 50
+Continuation:    none specified
+Path used:      Direct
+
+Table CUSTOMER_DATA, loaded from every logical record.
+Insert option in effect for this table: TRUNCATE
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+CUST_ID                             FIRST     *   ,  O(") CHARACTER            
+FNAME                                NEXT     *   ,  O(") CHARACTER            
+LNAME                                NEXT     *   ,  O(") CHARACTER            
+AGENT                                NEXT     *   ,  O(") CHARACTER            
+EMAIL                                NEXT     *   ,  O(") CHARACTER            
+HOME_PHONE                           NEXT     *   ,  O(") CHARACTER            
+B_PHONE                              NEXT     *   ,  O(") CHARACTER            
+BIRTH_DATE                           NEXT     *   ,  O(") DATE DD/MM/YYYY      
+ADDRESS                              NEXT     *   ,  O(") CHARACTER            
+CITY                                 NEXT     *   ,  O(") CHARACTER            
+POSTAL_CODE                          NEXT     *   ,  O(") CHARACTER            
+PROVINCE                             NEXT     *   ,  O(") CHARACTER            
+COUNTRY                              NEXT     *   ,  O(") CHARACTER            
+
+The following index(es) on table CUSTOMER_DATA were processed:
+index TOWNER.SYS_C003647 loaded successfully with 270 keys
+
+Table CUSTOMER_DATA:
+  270 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+  Date cache:
+   Max Size:      1000
+   Entries :       108
+   Hits    :         1
+   Misses  :         0
+
+Bind array size not used in direct path.
+Column array  rows :    5000
+Stream buffer bytes:  256000
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          1
+Total logical records read:           270
+Total logical records rejected:         0
+Total logical records discarded:        0
+Total stream buffers loaded by SQL*Loader main thread:        1
+Total stream buffers loaded by SQL*Loader load thread:        0
+
+Run began on Fri Dec 02 20:44:27 2016
+Run ended on Fri Dec 02 20:44:27 2016
+
+Elapsed time was:     00:00:00.28
+CPU time was:         00:00:00.11

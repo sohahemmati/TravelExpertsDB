@@ -1,0 +1,48 @@
+
+SQL*Loader: Release 11.2.0.2.0 - Production on Wed Nov 30 11:28:18 2016
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   C:\Users\Nick\Desktop\471project\controlfiles_loading\affiliation.ctl
+Data File:      C:\Users\Nick\Desktop\471project\controlfiles_loading\affiliation.ctl
+  Bad File:     C:\Users\Nick\Desktop\471project\controlfiles_loading\affiliation.bad
+  Discard File: C:\Users\Nick\Desktop\471project\controlfiles_loading\affiliation.dsc 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 0
+Errors allowed: 50
+Bind array:     64 rows, maximum of 256000 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table AFFILIATION, loaded from every logical record.
+Insert option in effect for this table: TRUNCATE
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+AFFILIATION_CODE                    FIRST     *   ,  O(") CHARACTER            
+AFFILIATION_NAME                     NEXT     *   ,  O(") CHARACTER            
+
+
+Table AFFILIATION:
+  7 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                  33024 bytes(64 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          0
+Total logical records read:             7
+Total logical records rejected:         0
+Total logical records discarded:        0
+
+Run began on Wed Nov 30 11:28:18 2016
+Run ended on Wed Nov 30 11:28:18 2016
+
+Elapsed time was:     00:00:00.22
+CPU time was:         00:00:00.03

@@ -1,0 +1,80 @@
+
+SQL*Loader: Release 11.2.0.2.0 - Production on Mon Dec 5 20:31:42 2016
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   C:\Users\Nick\Desktop\471project\adhoctables_loading\sale_adhoc\Sale.clt
+Data File:      C:\Users\Nick\Desktop\471project\adhoctables_loading\sale_adhoc\SaleData.csv
+  Bad File:     C:\Users\Nick\Desktop\471project\adhoctables_loading\sale_adhoc\Sale.bad
+  Discard File: C:\Users\Nick\Desktop\471project\adhoctables_loading\sale_adhoc\Sale.dsc 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 1
+Errors allowed: 50
+Continuation:    none specified
+Path used:      Direct
+
+Table SALE_DATA, loaded from every logical record.
+Insert option in effect for this table: TRUNCATE
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+SALE                                FIRST     *   ,  O(") DATE DD/MM/YYYY      
+CUST_ID                              NEXT     *   ,  O(") CHARACTER            
+ITINERARY_ID                         NEXT     *   ,  O(") CHARACTER            
+ITINERARY_NUM                        NEXT     *   ,  O(") CHARACTER            
+EMP_NUM                              NEXT     *   ,  O(") CHARACTER            
+AGENT                                NEXT     *   ,  O(") CHARACTER            
+BOOKING_ID                           NEXT     *   ,  O(") CHARACTER            
+BOOKING_NUM                          NEXT     *   ,  O(") CHARACTER            
+PRODUCT_CATEGORY                     NEXT     *   ,  O(") CHARACTER            
+PRODUCT_SUPPLIER_ID                  NEXT     *   ,  O(") CHARACTER            
+SUPPLIER_OFFICE                      NEXT     *   ,  O(") CHARACTER            
+TRIP_START                           NEXT     *   ,  O(") DATE DD/MM/YYYY      
+TRIP_END                             NEXT     *   ,  O(") DATE DD/MM/YYYY      
+CLASS                                NEXT     *   ,  O(") CHARACTER            
+NUM_OF_TRAVELERS                     NEXT     *   ,  O(") CHARACTER            
+PRODUCT_ID                           NEXT     *   ,  O(") CHARACTER            
+PRODUCT                              NEXT     *   ,  O(") CHARACTER            
+DESCRIPTION                          NEXT     *   ,  O(") CHARACTER            
+DESTINATION                          NEXT     *   ,  O(") CHARACTER            
+DEST_ID                              NEXT     *   ,  O(") CHARACTER            
+CREDIT_CARD                          NEXT     *   ,  O(") CHARACTER            
+EXPIRY_DATE                          NEXT     *   ,  O(") DATE DD/MM/YYYY      
+CARD_NUMBER                          NEXT     *   ,  O(") CHARACTER            
+BILLING_DATE                         NEXT     *   ,  O(") DATE DD/MM/YYYY      
+BILL_DESCRIPTION                     NEXT     *   ,  O(") CHARACTER            
+BASE_PRICE                           NEXT     *   ,  O(") CHARACTER            
+TOTAL_PRICE                          NEXT     *   ,  O(") CHARACTER            
+BILLED_AMT                           NEXT     *   ,  O(") CHARACTER            
+AGENCY_FEE_CODE                      NEXT     *   ,  O(") CHARACTER            
+AGENCY_FEE_AMOUNT                    NEXT     *   ,  O(") CHARACTER            
+
+
+Table SALE_DATA:
+  1340 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+  Date conversion cache disabled due to overflow (default size: 1000)
+
+Bind array size not used in direct path.
+Column array  rows :    5000
+Stream buffer bytes:  256000
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          1
+Total logical records read:          1340
+Total logical records rejected:         0
+Total logical records discarded:        0
+Total stream buffers loaded by SQL*Loader main thread:        1
+Total stream buffers loaded by SQL*Loader load thread:        0
+
+Run began on Mon Dec 05 20:31:42 2016
+Run ended on Mon Dec 05 20:31:43 2016
+
+Elapsed time was:     00:00:01.66
+CPU time was:         00:00:00.14

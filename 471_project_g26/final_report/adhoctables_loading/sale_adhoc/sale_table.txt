@@ -1,0 +1,114 @@
+REM ==================================================================
+REM *********** ZOHREH NEJADIAN ****** WORKSHOP 4 *************
+REM ==================================================================
+
+
+
+REM ================== INITIAL FORMAT SETTING ========================
+
+SET PAGESIZE 30
+SET LINESIZE 80
+SET FEEDBACK ON
+SET VERIFY ON
+
+TTITLE '**************** CREATE SALE_DATA TABLE ********************'
+BTITLE '********************* By Zohreh Nejadian **********************'
+
+COLUMN surname FORMAT A10
+COLUMN firstname FORMAT A15
+COLUMN salary FORMAT $99,999
+COLUMN course_title FORMAT A25 WORD_WRAPPED
+COLUMN last_change HEADING 'LAST|CHANGE' FORMAT A10
+COLUMN delete_rule HEADING 'DELETE|RULE' FORMAT A6
+
+BREAK ON COLUMN_NAME
+
+REM=========================== SQL COMMAND =============================
+
+SQL> CREATE TABLE        sale_data(
+  2           sale                      date,
+  3           cust_id           NUMBER(10),
+  4      itinerary_id           NUMBER(10),
+  5      itinerary_num          NUMBER(10),
+  6      emp_num                NUMBER(5),
+  7      agent                  CHAR(3),
+  8      booking_id             NUMBER(10),
+  9      booking_num            VARCHAR2(20),
+ 10      product_category       NUMBER(5),
+ 11      product_supplier_id    NUMBER(10),
+ 12      supplier_office        CHAR(2),
+ 13      trip_start             date,
+ 14      trip_end               date,
+ 15      class                  VARCHAR2(5),
+ 16      num_of_travelers       NUMBER(3),
+ 17      product_id             NUMBER(10),
+ 18      product                VARCHAR2(50),
+ 19      description            VARCHAR2(50),
+ 20      destination            VARCHAR2(35),
+ 21      dest_id                varchar2(5),
+ 22      credit_card            VARCHAR2(10),
+ 23      expiry_date            date,
+ 24      card_number            VARCHAR2(20),
+ 25      billing_date           date,
+ 26      bill_description       VARCHAR2(15),
+ 27      base_price             NUMBER(10),
+ 28      total_price            NUMBER(8,2),
+ 29      billed_amt             NUMBER(8,2),
+ 30      agency_fee_code        VARCHAR2(5),
+ 31      agency_fee_amount      NUMBER(5),
+ 32      agency_commission      NUMBER(8,2))
+ 33 TABLESPACE ADHOC;
+
+Table created.
+
+
+
+select table_name, tablespace_name, owner from dba_tables
+   WHERE TABLESPACE_NAME='ADHOC';
+
+SQL> desc sale_data;
+ Name                                      Null?    Type
+----------------------------------------- -------- ---------------------
+SALE                                               DATE
+CUST_ID                                            NUMBER(10)
+ITINERARY_ID                                       NUMBER(10)
+ITINERARY_NUM                                      NUMBER(10)
+EMP_NUM                                            NUMBER(5)
+AGENT                                              CHAR(3)
+BOOKING_ID                                         NUMBER(10)
+BOOKING_NUM                                        VARCHAR2(20)
+PRODUCT_CATEGORY                                   NUMBER(5)
+PRODUCT_SUPPLIER_ID                                NUMBER(10)
+SUPPLIER_OFFICE                                    CHAR(2)
+TRIP_START                                         DATE
+TRIP_END                                           DATE
+CLASS                                              VARCHAR2(5)
+NUM_OF_TRAVELERS                                   NUMBER(3)
+PRODUCT_ID                                         NUMBER(10)
+PRODUCT                                            VARCHAR2(50)
+DESCRIPTION                                        VARCHAR2(50)
+DESTINATION                                        VARCHAR2(35)
+DEST_ID                                            VARCHAR2(5)
+CREDIT_CARD                                        VARCHAR2(10)
+EXPIRY_DATE                                        DATE
+CARD_NUMBER                                        VARCHAR2(20)
+BILLING_DATE                                       DATE
+BILL_DESCRIPTION                                   VARCHAR2(15)
+BASE_PRICE                                         NUMBER(10)
+TOTAL_PRICE                                        NUMBER(8,2)
+BILLED_AMT                                         NUMBER(8,2)
+AGENCY_FEE_CODE                                    VARCHAR2(5)
+AGENCY_FEE_AMOUNT                                  NUMBER(5)
+AGENCY_COMMISSION                                  NUMBER(8,2)
+
+
+REM =================== CLEARING SETTING =============================== 
+
+TTITLE OFF
+BTITLE OFF
+SET linesize 80
+SET Long 80
+SET FEEDBACK OFF
+SET VERIFY OFF
+SET ECHO OFF
+SPOOL OFF

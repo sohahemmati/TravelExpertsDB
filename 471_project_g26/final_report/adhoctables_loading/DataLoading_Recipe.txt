@@ -1,0 +1,62 @@
+============================ DAtA LOADING STEPS (WITH TROLFILE):=========================
+
+DAtA LOADING STEPS (WITH CONTROLFILE):
+
+1. CREATE TABLE SCRIPT
+
+2. 
+
+3. CREATE CONTROL FILE
+
+4. CREATE DATAFILE
+
+
+5. 
+	H:\>set oracle_sid=travelxp
+
+	H:\>set oracle_sid
+	oracle_sid=travelxp
+
+	SQLLDR BOB/BOB CONTROL='PATH'   LOG='PATH'
+
+
+
+6. VERIFY: 
+	- Tha table data (SELECT * FROM TABLE_NAME;)
+	- look at log file
+
+7. IF THERE IS AN ERROR LOOK AT BAD FILE
+
+
+==================================== DAtA LOADING STEPS (WITH PARFILE):=========================
+
+1. CREATE TABLE SCRIPT
+
+2. BEFORE PICTURE
+
+	CONN SYS AS SYSDBA
+
+	SELECT TABLE_NAME FROM USER_TABLES
+	WHERE TABLESPACE_NAME='ADHOC';
+or
+	SELECT 	table_name, tablespace_name, owner 
+	FROM 	dba_tables
+	WHERE 	owner='TOWNER';
+
+3. CREATE PARFILE
+
+4. CREATE DATAFILE
+
+5. 
+	H:\>set oracle_sid=travelxp
+
+	H:\>set oracle_sid
+	oracle_sid=travelxp
+
+	SQLLDR BOB/BOB PARFILE='PATH'   log= 'path'
+
+6. VERIFY: 
+	- Tha table data (SELECT * FROM TABLE_NAME;)
+	- look at log file
+
+7. IF THERE IS AN ERROR LOOK AT BAD FILE

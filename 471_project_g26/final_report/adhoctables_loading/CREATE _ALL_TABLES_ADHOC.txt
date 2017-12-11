@@ -1,0 +1,238 @@
+REM ==================================================================
+REM *********** ZOHREH NEJADIAN ****** ASSIGNMENT 3 *************
+REM ==================================================================
+
+
+
+REM ================== INITIAL FORMAT SETTING ========================
+
+SET PAGESIZE 40
+SET LINESIZE 120
+SET FEEDBACK ON
+SET VERIFY ON
+
+--TTITLE '********************* CRAETE TABLES IN ADHOC *********************'
+--BTITLE '*********************   By Zohreh Nejadian    **********************'
+
+
+COL TABLE_NAME FOR A15
+COL TABLESPACE_NAME FOR A15
+COL OWNER FOR A15
+
+
+
+REM ==================================== CREATE CUSTOMER TABLE  ==============================
+
+
+
+SQL> conn towner/t123owner
+Connected.
+
+
+SQL> show user
+USER is "TOWNER"
+
+
+SQL> CREATE TABLE        customer_data(
+  2           cust_id      NUMBER(5) PRIMARY KEY,
+  3           fname        VARCHAR2(15) NOT NULL,
+  4           Lname        VARCHAR2(15) NOT NULL,
+  5           agent        VARCHAR2(3),
+  6           email        VARCHAR2(30),
+  7           home_phone   VARCHAR2(15),
+  8           B_PHONE      VARCHAR2(15),
+  9           birth_date   DATE,
+ 10           address      VARCHAR2(50),
+ 11      city         VARCHAR2(10),
+ 12      postal_code  VARCHAR2(10),
+ 13      province     VARCHAR2(10),
+ 14      country      VARCHAR2(10))
+ 15  TABLESPACE ADHOC;
+
+Table created.
+
+
+
+
+SQL> DESC CUSTOMER_DATA
+
+ Name                                                              Null?    Type
+ ----------------------------------------------------------------- -------- ---------------
+ CUST_ID                                                           NOT NULL NUMBER(5)
+ FNAME                                                             NOT NULL VARCHAR2(15)
+ LNAME                                                             NOT NULL VARCHAR2(15)
+ AGENT                                                                      VARCHAR2(3)
+ EMAIL                                                                      VARCHAR2(30)
+ HOME_PHONE                                                                 VARCHAR2(15)
+ B_PHONE                                                                    VARCHAR2(15)
+ BIRTH_DATE                                                                 DATE
+ ADDRESS                                                                    VARCHAR2(50)
+ CITY                                                                       VARCHAR2(10)
+ POSTAL_CODE                                                                VARCHAR2(10)
+ PROVINCE                                                                   VARCHAR2(10)
+ COUNTRY                                                                    VARCHAR2(10)
+
+
+
+
+REM ==================================== CREATE SUPPLIER TABLE  ==============================
+
+
+
+
+
+SQL> CREATE TABLE        supplier_data(
+  2           product_supplier          NUMBER(5),
+  3           product_category       NUMBER(5),
+  4           supplier_office        CHAR(2),
+  5           product_description    VARCHAR2(30),
+  6      Contact_Name           VARCHAR2(30),
+  7      company                VARCHAR2(75),
+  8      address1               VARCHAR2(30),
+  9      address2               VARCHAR2(30),
+ 10      city                   VARCHAR2(25),
+ 11      prov_state             VARCHAR2(5),
+ 12      zip_postal             VARCHAR2(10),
+ 13      country                VARCHAR2(20),
+ 14      PHONE                  VARCHAR2(15),
+ 15      fax                    VARCHAR2(15),
+ 16           email                     VARCHAR2(40),
+ 17           web                       VARCHAR2(40),
+ 18      represents             VARCHAR2(30),
+ 19           affiliation               VARCHAR2(15))
+ 20  TABLESPACE ADHOC;
+
+Table created.
+
+SQL>
+SQL>
+SQL>
+SQL>
+SQL> DESC SUPPLIER_DATA
+ Name                                      Null?    Type
+ ----------------------------------------- -------- --------------
+ PRODUCT_SUPPLIER                                   NUMBER(5)
+ PRODUCT_CATEGORY                                   NUMBER(5)
+ SUPPLIER_OFFICE                                    CHAR(2)
+ PRODUCT_DESCRIPTION                                VARCHAR2(30)
+ CONTACT_NAME                                       VARCHAR2(30)
+ COMPANY                                            VARCHAR2(75)
+ ADDRESS1                                           VARCHAR2(30)
+ ADDRESS2                                           VARCHAR2(30)
+ CITY                                               VARCHAR2(25)
+ PROV_STATE                                         VARCHAR2(5)
+ ZIP_POSTAL                                         VARCHAR2(10)
+ COUNTRY                                            VARCHAR2(20)
+ PHONE                                              VARCHAR2(15)
+ FAX                                                VARCHAR2(15)
+ EMAIL                                              VARCHAR2(40)
+ WEB                                                VARCHAR2(40)
+ REPRESENTS                                         VARCHAR2(30)
+ AFFILIATION                                        VARCHAR2(15)
+
+
+
+
+REM ==================================== CREATE SALE TABLE  ==============================
+
+
+
+SQL> CREATE TABLE        sale_data(
+  2           sale                      date,
+  3           cust_id           NUMBER(10),
+  4      itinerary_num          NUMBER(10),
+  5      agent                  CHAR(3),
+  6      booking_num            VARCHAR2(20),
+  7      product_category       NUMBER(5),
+  8      product_supplier_id    NUMBER(10),
+  9           supplier_office        CHAR(2),
+ 10      trip_start             date,
+ 11      trip_end               date,
+ 12      class                  VARCHAR2(5),
+ 13      num_of_travelers       NUMBER(3),
+ 14      product                VARCHAR2(50),
+ 15      description            VARCHAR2(50),
+ 16      destination            VARCHAR2(35),
+ 17      dest_id                varchar2(5),
+ 18      credit_card            VARCHAR2(10),
+ 19      expiry_date            date,
+ 20      card_number            VARCHAR2(20),
+ 21      billing_date           date,
+ 22      bill_description       VARCHAR2(15),
+ 23      base_price             NUMBER(10),
+ 24      total_price            NUMBER(8,2),
+ 25      billed_amt             NUMBER(8,2),
+ 26      agency_fee_code        char(3),
+ 27      agency_fee_amount      NUMBER(5),
+ 28      agency_commission      NUMBER(8,2))
+ 29  TABLESPACE ADHOC;
+
+Table created.
+
+SQL>
+SQL>
+SQL>
+SQL>
+SQL> DESC SALE_DATA
+ Name                                      Null?    Type
+ ----------------------------------------- -------- -----------------
+ SALE                                               DATE
+ CUST_ID                                            NUMBER(10)
+ ITINERARY_NUM                                      NUMBER(10)
+ AGENT                                              CHAR(3)
+ BOOKING_NUM                                        VARCHAR2(20)
+ PRODUCT_CATEGORY                                   NUMBER(5)
+ PRODUCT_SUPPLIER_ID                                NUMBER(10)
+ SUPPLIER_OFFICE                                    CHAR(2)
+ TRIP_START                                         DATE
+ TRIP_END                                           DATE
+ CLASS                                              VARCHAR2(5)
+ NUM_OF_TRAVELERS                                   NUMBER(3)
+ PRODUCT                                            VARCHAR2(50)
+ DESCRIPTION                                        VARCHAR2(50)
+ DESTINATION                                        VARCHAR2(35)
+ DEST_ID                                            VARCHAR2(5)
+ CREDIT_CARD                                        VARCHAR2(10)
+ EXPIRY_DATE                                        DATE
+ CARD_NUMBER                                        VARCHAR2(20)
+ BILLING_DATE                                       DATE
+ BILL_DESCRIPTION                                   VARCHAR2(15)
+ BASE_PRICE                                         NUMBER(10)
+ TOTAL_PRICE                                        NUMBER(8,2)
+ BILLED_AMT                                         NUMBER(8,2)
+ AGENCY_FEE_CODE                                    CHAR(3)
+ AGENCY_FEE_AMOUNT                                  NUMBER(5)
+ AGENCY_COMMISSION                                  NUMBER(8,2)
+SQL> conn sys/oracle as sysdba
+Connected.
+
+
+
+
+SQL> select table_name, tablespace_name, owner from DBA_tables
+  2     WHERE TABLESPACE_NAME='ADHOC';
+
+TABLE_NAME      TABLESPACE_NAME OWNER
+--------------- --------------- ---------------
+CUSTOMER_DATA   ADHOC           TOWNER
+SUPPLIER_DATA   ADHOC           TOWNER
+SALE_DATA       ADHOC           TOWNER
+
+3 rows selected.
+
+
+
+
+
+REM =================== CLEARING SETTING =============================== 
+
+TTITLE OFF
+BTITLE OFF
+SET linesize 80
+SET Long 80
+SET FEEDBACK OFF
+SET VERIFY OFF
+SET ECHO OFF
+
+
+SPOOL OFF
